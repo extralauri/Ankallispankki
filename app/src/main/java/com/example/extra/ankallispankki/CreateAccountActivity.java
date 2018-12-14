@@ -64,7 +64,7 @@ public class CreateAccountActivity extends MainActivity
         newDebit.setMax(10000);
         newCredit.setMax(1000);
 
-       addSpinner();
+        addSpinner();
 
         addDebitAccount = findViewById(R.id.button);
         addCreditAccount = findViewById(R.id.button2);
@@ -73,48 +73,40 @@ public class CreateAccountActivity extends MainActivity
         toggleswitch = findViewById(R.id.switch1);
 
         checkIfDisabled();
-
+        //if the switch is clicked it call method to change account's disable variant value
         toggleswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 aBank.userList.get(listId).accountList.get(i).changeState();
             }
         });
-
+        //Seekbar for getting debit value
         newDebit.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress,
-                                          boolean fromUser) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 Toast.makeText(getApplicationContext(),"Debit:  "+progress, Toast.LENGTH_SHORT).show();
                 setDebit = progress;
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
                 Toast.makeText(getApplicationContext(),"Debit: 0", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // Toast.makeText(getApplicationContext(),"Lisää rahaa:  "+progress, Toast.LENGTH_SHORT).show();
             }
         });
-
+        //seekbar for getting credit value
         newCredit.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress,
-                                          boolean fromUser) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 Toast.makeText(getApplicationContext(),"Credit:  "+progress, Toast.LENGTH_SHORT).show();
                 setCredit = progress;
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
                 Toast.makeText(getApplicationContext(),"Credit: 0", Toast.LENGTH_SHORT).show();
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 // Toast.makeText(getApplicationContext(),"Lisää rahaa:  "+progress, Toast.LENGTH_SHORT).show();

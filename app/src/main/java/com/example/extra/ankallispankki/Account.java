@@ -49,6 +49,7 @@ abstract class Account{
 
 }
 
+//Creates Debit account class which inherites Account class
 class debitAccount extends Account{
     public debitAccount(String ac_number, double debit) {
         this.acNumber = ac_number;
@@ -56,6 +57,8 @@ class debitAccount extends Account{
     }
 }
 
+
+//Creates Credit account class which inherites Account class
 class creditAccount extends Account {
     public creditAccount(String ac_number, double debit, double credit) {
         this.acNumber = ac_number;

@@ -206,7 +206,7 @@ public class PaymentActivity extends MainActivity
         }
     }
 
-    //Searches if the writed account is found from the accountlist
+    //Searches if the writed account is found from the accountlist and returns it's account number
     public String searchAccount(String ac_num){
         //Iterates through all users and accounts
         for(int i=0; i<aBank.userList.size();i++){

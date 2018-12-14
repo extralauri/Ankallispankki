@@ -13,10 +13,9 @@ import android.widget.TextView;
 public class UserActivity extends MainActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    TextView userName;
-    TextView userAddress;
-    TextView City;
-    TextView userAge;
+    //UI elements
+    TextView userName,userAddress,City,userAge;
+    //variable for account id
     Integer listId;
 
     @Override
@@ -26,6 +25,7 @@ public class UserActivity extends MainActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Navigation menu drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -35,8 +35,10 @@ public class UserActivity extends MainActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // User id from login
         listId = Integer.parseInt(getIntent().getStringExtra("idc"));
 
+        // Hide admin tools from regular users
         if(aBank.userList.get(listId).getID() == 0){
             navigationView.getMenu().setGroupVisible(R.id.nav_tools,false);
         }
