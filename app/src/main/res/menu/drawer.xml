@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_user"
+        android:title="User information" />
+    <item
+        android:id="@+id/nav_account"
+        android:title="Accounts" />
+    <item
+        android:id="@+id/nav_payment"
+        android:title="Payment" />
+    <item
+        android:id="@+id/nav_transfers"
+        android:title="Transfer between accounts" />
+    <item
+        android:id="@+id/nav_history"
+        android:title="Transaction history" />
+    </group>
+    <group
+        android:id="@+id/nav_tools"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_createAccount"
+            android:title="Manage accounts" />
+        <item
+            android:id="@+id/nav_createUser"
+            android:title="Create user" />
+        <item
+            android:id="@+id/nav_accountList"
+            android:title="Account list" />
+        <item
+            android:id="@+id/nav_manageUsers"
+            android:title="Manage users" />
+    </group>
+
+</menu>

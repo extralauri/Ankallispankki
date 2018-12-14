@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<list>
+    <account>
+        <name> Testi </name>
+        <message> plaah </message>
+        <date> 2000-01-01 </date>
+    </account>
+    <account>
+        <name> Testi2 </name>
+        <message> plaah </message>
+        <date> 2000-01-01 </date>
+    </account>
+</list>
