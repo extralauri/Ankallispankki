@@ -193,7 +193,7 @@ public class CreateAccountActivity extends MainActivity
     //Removes account based on spinner selection
     public void setDeleteAccount(View v){
         aBank.userList.get(spinner1Selection).accountList.remove((int)spinner2Selection);
-        updateSpinners();
+        addSpinner2();
     }
 
     //Updates spinner values
