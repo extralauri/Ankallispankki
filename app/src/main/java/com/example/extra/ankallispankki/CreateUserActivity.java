@@ -97,7 +97,7 @@ public class CreateUserActivity extends MainActivity
             }
         });
     }
-    //Removes account
+    //Removes user
     public void setDeleteAccount(View v) {
         if (spinnerSelection == 0) {
             Toast.makeText(this, "Admin can't be removed!", Toast.LENGTH_LONG).show();

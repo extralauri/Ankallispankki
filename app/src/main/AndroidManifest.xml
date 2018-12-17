@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".AccountActivity"
-            android:label="Account"
+            android:label="Deposit and withdraw"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

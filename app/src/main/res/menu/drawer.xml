@@ -10,7 +10,7 @@
         android:title="User information" />
     <item
         android:id="@+id/nav_account"
-        android:title="Accounts" />
+        android:title="Deposit and withdraw" />
     <item
         android:id="@+id/nav_payment"
         android:title="Payment" />

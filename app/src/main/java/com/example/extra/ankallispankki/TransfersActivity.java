@@ -30,7 +30,7 @@ public class TransfersActivity extends MainActivity
     Spinner spinnerFrom, spinnerTo;
     SeekBar seekbar;
     //Helper variables for arrays
-    Integer i=0, j=0, transMoney=0, listId;
+    Integer i=0, j=0, transMoney=0, listId,seekMoney;
     // variables for transferMoney method call
     String trans_from, trans_to, trans_name, trans_message, trans_money, trans_filename;
 
@@ -70,8 +70,10 @@ public class TransfersActivity extends MainActivity
         debitFrom.setText(String.valueOf(aBank.userList.get(listId).accountList.get(i).getDebit()));
         debitTo.setText(String.valueOf(aBank.userList.get(listId).accountList.get(i).getDebit().toString()));
 
+        seekMoney = (aBank.userList.get(listId).accountList.get(i).getDebit()).intValue();
+
         seekbar = findViewById(R.id.seekBar5);
-        seekbar.setMax(1000);
+        seekbar.setMax(seekMoney);
 
         //Seekbar Listener
         seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -115,6 +117,7 @@ public class TransfersActivity extends MainActivity
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 i = position;
                 debitFrom.setText(String.valueOf(aBank.userList.get(listId).accountList.get(i).getDebit()));
+                seekbar.setMax((aBank.userList.get(listId).accountList.get(i).getDebit()).intValue());
             }
 
             @Override

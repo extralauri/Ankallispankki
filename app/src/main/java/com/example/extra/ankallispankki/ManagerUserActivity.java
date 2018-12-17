@@ -55,8 +55,8 @@ public class ManagerUserActivity extends MainActivity
         Username = findViewById(R.id.editText3);
         password = findViewById(R.id.editText4);
         Address = findViewById(R.id.editText5);
-        Age = findViewById(R.id.editText9);
-        City = findViewById(R.id.editText10);
+        Age = findViewById(R.id.editText10);
+        City = findViewById(R.id.editText9);
         save = findViewById(R.id.button13);
         addSpinner();
     }
