@@ -128,12 +128,15 @@ public class PaymentActivity extends MainActivity
 
     //Updates textviews
     public void updateText(){
-        accountDebit.setText(String.valueOf(aBank.userList.get(0).accountList.get(i).getDebit()));
-        accountCredit.setText(String.valueOf(aBank.userList.get(0).accountList.get(i).getCredit()));
+        accountDebit.setText(String.valueOf(aBank.userList.get(listId).accountList.get(i).getDebit()));
+        accountCredit.setText(String.valueOf(aBank.userList.get(listId).accountList.get(i).getCredit()));
     }
 
     // makes payment when Pay button is clicked
     public void payOnClick(View v) throws JSONException {
+
+        //temp variable
+        String temp;
         //Checks if account is disabled
         if(aBank.userList.get(listId).accountList.get(i).disabled == 1){
             Toast.makeText(this,"The account has been disabled",Toast.LENGTH_SHORT).show();
@@ -145,7 +148,10 @@ public class PaymentActivity extends MainActivity
         else {
             //sets values to variables which is used writing on file
             trans_from = aBank.userList.get(listId).accountList.get(i).acNumber;
-            trans_to = editText.getText().toString();
+
+            temp = editText.getText().toString();
+            trans_to = searchAccount(temp);
+
             trans_money = String.valueOf(money);
             trans_message = editText2.getText().toString();
 
@@ -160,6 +166,7 @@ public class PaymentActivity extends MainActivity
                 aBank.userList.get(listId).accountList.get(i).withDraw(money);
                 if(k>=0 && h>=0) {
                     //Adds money to target account and writes to it's transaction history
+
                     aBank.userList.get(k).accountList.get(h).deposit(money);
                     aBank.userList.get(k).accountList.get(h).transaction.writeJSONFile(aBank.userList.get(k).getName() + "_history.json", aBank.userList.get(k).getName(), trans_from, trans_to, trans_money, trans_message);
                 }
@@ -195,9 +202,9 @@ public class PaymentActivity extends MainActivity
            else {
                 Toast.makeText(this, "Payment on the way!", Toast.LENGTH_LONG).show();
                 aBank.userList.get(listId).accountList.get(i).transaction.writeJSONFile(trans_filename, trans_name, trans_from, trans_to, trans_money, trans_message);
-                aBank.userList.get(listId).accountList.get(i).withDraw(money);
+                aBank.userList.get(listId).accountList.get(i).withDrawCredit(money);
                 if(k>=0 && h>=0) {
-                    System.out.println("vittuuuuuu");
+
                     aBank.userList.get(k).accountList.get(h).deposit(money);
                     aBank.userList.get(k).accountList.get(h).transaction.writeJSONFile(aBank.userList.get(k).getName() + "_history.json", aBank.userList.get(k).getName(), trans_from, trans_to, trans_money, trans_message);
                 }
