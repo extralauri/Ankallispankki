@@ -56,8 +56,9 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
   return history_names.size();
  }
 
+ // initialize the item view's
  public class MyViewHolder extends RecyclerView.ViewHolder {
-  TextView name, from, to, money,message, time;// init the item view's
+  TextView name, from, to, money,message, time;
 
   public MyViewHolder(View itemView) {
    super(itemView);
