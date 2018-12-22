@@ -16,6 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -51,6 +52,20 @@ public class HistoryActivity extends MainActivity
         if (getIntent().hasExtra("pos")){
             listId = Integer.parseInt(getIntent().getStringExtra("pos"));
             System.out.println("listId on pos: "+ listId );
+        }
+        //creates transaction history file
+        String filename = aBank.userList.get(listId).getName()+"_history.json";
+        File file = new File(context.getFilesDir(), filename);
+        try {
+            if (file.createNewFile()) {
+
+                System.out.println("File has been created.");
+            } else {
+
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         // get the reference of RecyclerView

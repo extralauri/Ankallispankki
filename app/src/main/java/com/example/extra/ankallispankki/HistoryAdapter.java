@@ -20,7 +20,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
  ArrayList<String> history_message = new ArrayList<>();
  ArrayList<String> history_time = new ArrayList<>();
 
- //HIstoryAdapter constructor
+ //HIstoryAdapter constructor. Adds parameter values to local variables
  public HistoryAdapter(Context context, ArrayList<String> Names, ArrayList<String> From, ArrayList<String> To, ArrayList<String> Money, ArrayList<String> Message,ArrayList<String> Time) {
   this.context = context;
   this.history_names = Names;
@@ -31,6 +31,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.MyViewHo
   this.history_time = Time;
 }
 
+ // RowLayout
  @Override
  public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
   // inflate the item Layout

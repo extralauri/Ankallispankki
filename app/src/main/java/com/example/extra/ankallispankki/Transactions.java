@@ -133,6 +133,9 @@ public class Transactions {
         return time;
     }
 
+
+
+
     // Rreads and parsers data from  the file.
     public String loadJSONFromAsset(String filename) {
         String json = null;
